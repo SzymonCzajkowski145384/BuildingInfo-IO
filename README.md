@@ -3,8 +3,11 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
 
 Struktura danych (do umieszczenia w pliku README.md)
 • Lokacja to budynek, poziom, lub pomieszczenie
+
 • Budynek może składać się z poziomów a te z pomieszczeń
+
 • Każda lokalizacja jest charakteryzowana przez:
+
     o id – unikalny identyfikator
    o name – opcjonalna nazwa lokalizacji
 • Pomieszczenie dodatkowo jest charakteryzowane przez:
