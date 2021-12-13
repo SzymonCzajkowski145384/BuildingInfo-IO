@@ -217,4 +217,21 @@ public class BuildingTransformer {
         return "Pokój o id: " + String.valueOf(id3) + " na piętrze o id: " + String.valueOf(id2) + " w budynku o id: "
                 + String.valueOf(id1) + " nie istnieje";
     }
+
+    public String getWrongRooms(float norm) {
+        String s = "";
+        for (int i = 0; i < buildings.size(); i++) {
+            for (int j = 0; j < buildings.get(i).floors.size(); j++) {
+                for (int k = 0; k < buildings.get(i).floors.get(j).rooms.size(); k++) {
+                    if(buildings.get(i).floors.get(j).rooms.get(k).getHeating()/buildings.get(i).floors.get(j).rooms.get(k).getCube() > norm)
+                        s += "Budynek o id " + String.valueOf(buildings.get(i).getId()) + ", piętro o id "+ String.valueOf(buildings.get(i).floors.get(j).getId())
+                                + ", pomieszczenie o id " + String.valueOf(buildings.get(i).floors.get(j).rooms.get(k).getId())+"\n";
+                }
+            }
+        }
+        if (s.length()==0)
+            return "Wszystkie pomieszczenia spełniają normę";
+        return "Pomieszczenia nie spełniające normy:\n" + s;
+    }
+
 }

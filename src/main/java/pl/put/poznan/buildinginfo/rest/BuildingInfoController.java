@@ -90,6 +90,10 @@ public class BuildingInfoController {
         return transformer.getHeatingOfRoom(id1, id2, id3);
     }
 
+    @RequestMapping("/wrong/{norm}")
+    public String getWrongRooms(@PathVariable float norm){
+        return transformer.getWrongRooms(norm);
+    }
 
 }
 
