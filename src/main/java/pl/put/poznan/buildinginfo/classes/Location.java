@@ -25,4 +25,23 @@ public abstract class Location {
     public void setName(String name) {
         this.name = name;
     }
+
+    public float getArea() {
+        return 1;
+    }
+
+
+    public float getCube() {
+        return 1;
+    }
+
+
+    public float getHeating() {
+        return 1;
+    }
+
+
+    public float getLight() {
+        return 1;
+    }
 }

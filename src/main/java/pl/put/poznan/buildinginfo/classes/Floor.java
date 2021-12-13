@@ -12,21 +12,26 @@ public class Floor extends Location {
         this.rooms = new ArrayList<>();
     }
 
+    @Override
     public float getArea() {
-        return 1;
+        float suma = 0;
+        for (int i=0; i < rooms.size(); i++){
+            suma += rooms.get(i).getArea();
+        }
+        return suma;
     }
 
-
+    @Override
     public float getCube() {
         return 1;
     }
 
-
+    @Override
     public float getHeating() {
         return 1;
     }
 
-
+    @Override
     public float getLight() {
         return 1;
     }

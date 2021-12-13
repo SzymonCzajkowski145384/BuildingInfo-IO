@@ -14,21 +14,22 @@ public class Room extends Location {
         this.light = light;
     }
 
+    @Override
     public float getArea() {
         return area;
     }
 
-
+    @Override
     public float getCube() {
         return cube;
     }
 
-
+    @Override
     public float getHeating() {
         return heating;
     }
 
-
+    @Override
     public float getLight() {
         return light;
     }

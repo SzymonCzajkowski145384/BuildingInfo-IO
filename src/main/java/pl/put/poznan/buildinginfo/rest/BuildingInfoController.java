@@ -30,6 +30,21 @@ public class BuildingInfoController {
     @RequestMapping(method=RequestMethod.DELETE, value="/buildings")
     public void deleteAllBuildings() {transformer.deleteAllBuildings();}
 
+    @RequestMapping("/area/{id1}")
+    public String getAreaOfBuilding(@PathVariable int id1){
+        return transformer.getAreaOfBuilding(id1);
+    }
+
+    @RequestMapping("/area/{id1}/{id2}")
+    public String getAreaOfFloor(@PathVariable int id1, @PathVariable int id2){
+        return transformer.getAreaOfFloor(id1, id2);
+    }
+
+    @RequestMapping("/area/{id1}/{id2}/{id3}")
+    public String getAreaOfRoom(@PathVariable int id1, @PathVariable int id2, @PathVariable int id3){
+        return transformer.getAreaOfRoom(id1, id2, id3);
+    }
+
 }
 
 

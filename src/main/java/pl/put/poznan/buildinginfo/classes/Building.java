@@ -12,21 +12,26 @@ public class Building extends Location {
         this.floors = new ArrayList<>();
     }
 
+    @Override
     public float getArea() {
-        return 1;
+        float suma = 0;
+        for (int i=0; i < floors.size(); i++){
+            suma += floors.get(i).getArea();
+        }
+        return suma;
     }
 
-
+    @Override
     public float getCube() {
         return 1;
     }
 
-
+    @Override
     public float getHeating() {
         return 1;
     }
 
-
+    @Override
     public float getLight() {
         return 1;
     }
