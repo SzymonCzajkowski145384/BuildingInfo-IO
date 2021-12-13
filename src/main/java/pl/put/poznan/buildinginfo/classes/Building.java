@@ -33,11 +33,19 @@ public class Building extends Location {
 
     @Override
     public float getHeating() {
-        return 1;
+        float heat = 0;
+        for(int i = 0; i < floors.size(); i++) {
+            heat += floors.get(i).getHeating();
+        }
+        return heat;
     }
 
     @Override
     public float getLight() {
-        return 1;
+        float suma = 0;
+        for (int i=0; i < floors.size(); i++){
+            suma += floors.get(i).getLight();
+        }
+        return suma;
     }
 }

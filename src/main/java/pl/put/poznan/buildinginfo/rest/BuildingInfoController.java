@@ -47,7 +47,7 @@ public class BuildingInfoController {
 
     @RequestMapping("/cube/{id1}")
     public String getCubeOfBuilding(@PathVariable int id1){
-        return transformer.getCubeOfBulding(id1);
+        return transformer.getCubeOfBuilding(id1);
     }
 
     @RequestMapping("/cube/{id1}/{id2}")
@@ -59,6 +59,37 @@ public class BuildingInfoController {
     public String getCubeOfRoom(@PathVariable int id1, @PathVariable int id2, @PathVariable int id3){
         return transformer.getCubeOfRoom(id1, id2, id3);
     }
+
+    @RequestMapping("/light/{id1}")
+    public String getLightOfBuilding(@PathVariable int id1){
+        return transformer.getLightOfBuilding(id1);
+    }
+
+    @RequestMapping("/light/{id1}/{id2}")
+    public String getLightOfFloor(@PathVariable int id1, @PathVariable int id2){
+        return transformer.getLightOfFloor(id1, id2);
+    }
+
+    @RequestMapping("/light/{id1}/{id2}/{id3}")
+    public String getLightOfRoom(@PathVariable int id1, @PathVariable int id2, @PathVariable int id3){
+        return transformer.getLightOfRoom(id1, id2, id3);
+    }
+
+    @RequestMapping("/heating/{id1}")
+    public String getHeatingOfBuilding(@PathVariable int id1){
+        return transformer.getHeatingOfBuilding(id1);
+    }
+
+    @RequestMapping("/heating/{id1}/{id2}")
+    public String getHeatingOfFloor(@PathVariable int id1, @PathVariable int id2) {
+        return transformer.getHeatingOfFloor(id1, id2);
+    }
+
+    @RequestMapping("/heating/{id1}/{id2}/{id3}")
+    public String getHeatingOfRoom(@PathVariable int id1, @PathVariable int id2, @PathVariable int id3){
+        return transformer.getHeatingOfRoom(id1, id2, id3);
+    }
+
 
 }
 

@@ -33,11 +33,19 @@ public class Floor extends Location {
 
     @Override
     public float getHeating() {
-        return 1;
+        float heat = 0;
+        for(int i = 0; i < rooms.size(); i++) {
+            heat += rooms.get(i).getHeating();
+        }
+        return heat;
     }
 
     @Override
     public float getLight() {
-        return 1;
+        float suma = 0;
+        for (int i=0; i < rooms.size(); i++){
+            suma += rooms.get(i).getLight();
+        }
+        return suma;
     }
 }
