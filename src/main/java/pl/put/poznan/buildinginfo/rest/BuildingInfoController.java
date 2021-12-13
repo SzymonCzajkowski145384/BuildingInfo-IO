@@ -45,6 +45,21 @@ public class BuildingInfoController {
         return transformer.getAreaOfRoom(id1, id2, id3);
     }
 
+    @RequestMapping("/cube/{id1}")
+    public String getCubeOfBuilding(@PathVariable int id1){
+        return transformer.getCubeOfBulding(id1);
+    }
+
+    @RequestMapping("/cube/{id1}/{id2}")
+    public String getCubeOfFloor(@PathVariable int id1, @PathVariable int id2){
+        return transformer.getCubeOfFloor(id1, id2);
+    }
+
+    @RequestMapping("/cube/{id1}/{id2}/{id3}")
+    public String getCubeOfRoom(@PathVariable int id1, @PathVariable int id2, @PathVariable int id3){
+        return transformer.getCubeOfRoom(id1, id2, id3);
+    }
+
 }
 
 

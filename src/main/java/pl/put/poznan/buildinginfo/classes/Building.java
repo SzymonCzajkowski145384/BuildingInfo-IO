@@ -22,8 +22,13 @@ public class Building extends Location {
     }
 
     @Override
-    public float getCube() {
-        return 1;
+    public float getCube()
+    {
+        float cube = 0;
+        for(int i = 0; i < floors.size(); i++) {
+            cube += floors.get(i).getCube();
+        }
+        return cube;
     }
 
     @Override
