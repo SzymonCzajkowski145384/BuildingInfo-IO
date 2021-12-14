@@ -3,14 +3,34 @@ package pl.put.poznan.buildinginfo.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class Building extends abstract class "Location"
+ *
+ * @author Bartosz Cudzinski, Szymon Czajkowski
+ * @version 0.5
+ */
+
 public class Building extends Location {
 
     public List<Floor> floors;
+
+    /**
+     * Constructor of a Building
+     *
+     * @param id param id is the id of the building
+     * @param name param name is the name of the building
+     */
 
     public Building(int id, String name) {
         super(id, name);
         this.floors = new ArrayList<>();
     }
+
+    /**
+     * This method computes sum of area
+     *
+     * @return return sum of area
+     */
 
     @Override
     public float getArea() {
@@ -20,6 +40,12 @@ public class Building extends Location {
         }
         return suma;
     }
+
+    /**
+     * This method computes cube
+     *
+     * @return return value of cube
+     */
 
     @Override
     public float getCube()
@@ -31,6 +57,12 @@ public class Building extends Location {
         return cube;
     }
 
+    /**
+     * This method compute heat
+     *
+     * @return return value of heat
+     */
+
     @Override
     public float getHeating() {
         float heat = 0;
@@ -39,6 +71,12 @@ public class Building extends Location {
         }
         return heat;
     }
+
+    /**
+     * This method computes light
+     *
+     * @return return value of light
+     */
 
     @Override
     public float getLight() {
