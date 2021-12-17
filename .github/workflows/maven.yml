@@ -23,4 +23,13 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+        mkdir folder
+        mvn -B package --file pom.xml
+        mv target folder
+
+    - name: Uploading
+      uses: actions/upload-artifact@v2
+      with:
+        name: jar&doc
+        path: folder
