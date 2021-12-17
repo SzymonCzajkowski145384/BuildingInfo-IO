@@ -23,3 +23,77 @@ Dla administratorów budynków, którzy pragną optymalizować koszty zarządzan
    
     o light – łączna moc oświetlenia
 
+### Opis działania
+
+- [POST] /buildings - umożliwia dodanie listy budynków.
+Przykładowy input:
+```json
+[
+    {
+        "id": 1,
+        "name": "A",
+        "floors": [
+            {
+                "id": 1,
+                "name": "A",
+                "rooms": [
+                    {
+                        "id": 1,
+                        "name": "a",
+                        "area": 100.0,
+                        "cube": 20.0,
+                        "heating": 10.0,
+                        "light": 5.0
+                    },
+                    {
+                        "id": 2,
+                        "name": "a",
+                        "area": 60.0,
+                        "cube": 20.0,
+                        "heating": 10.0,
+                        "light": 5.0
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "B",
+                "rooms": [
+                    {
+                        "id": 1,
+                        "name": "b",
+                        "area": 100.0,
+                        "cube": 20.0,
+                        "heating": 10.0,
+                        "light": 5.0
+                    },
+                    {
+                        "id": 2,
+                        "name": "b",
+                        "area": 60.0,
+                        "cube": 20.0,
+                        "heating": 10.0,
+                        "light": 5.0
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
+- [GET] /buildins - wyświtla listę pwszystkich budynków
+- [DELETE] /buildings - usuwa wszystkie budynki
+- [GET] /area/{id1} - wyświetla pole budynku o podanym id1
+- [GET] /area/{id1}/{id2} - wyświetla pole piętra o id2 w budynku id1
+- [GET] /area/{id1}/{id2}/{id3} - wyświetla pole pomieszczenia o id3 na piętrze o id2 w budynku id1
+- [GET] /cube/{id1} - wyświetla kubature budynku o podanym id1
+- [GET] /cube/{id1}/{id2} - wyświetla kubature piętra o id2 w budynku id1
+- [GET] /cube/{id1}/{id2}/{id3} - wyświetla kubature pomieszczenia o id3 na piętrze o id2 w budynku id1
+- [GET] /light/{id1} - wyświetla oświetlenie budynku o podanym id1
+- [GET] /light/{id1}/{id2} - wyświetla oświetlenie piętra o id2 w budynku id1
+- [GET] /light/{id1}/{id2}/{id3} - wyświetla oświetlenie pomieszczenia o id3 na piętrze o id2 w budynku id1
+- [GET] /heating/{id1} - wyświetla poziom zużycia energii budynku o podanym id1
+- [GET] /heating/{id1}/{id2} - wyświetla poziom zużycia energii piętra o id2 w budynku id1
+- [GET] /heating/{id1}/{id2}/{id3} - wyświetla poziom zużycia energii pomieszczenia o id3 na piętrze o id2 w budynku id1
+- [GET] /wrong/{norm} - wyświetla pomieszczenia, które przekraczają podany limit (norm)
