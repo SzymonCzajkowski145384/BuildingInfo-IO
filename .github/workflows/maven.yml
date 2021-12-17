@@ -26,6 +26,7 @@ jobs:
       run: |
         mkdir folder
         mvn -B package --file pom.xml
+        mvn javadoc:javadoc
         mv target folder
 
     - name: Uploading
