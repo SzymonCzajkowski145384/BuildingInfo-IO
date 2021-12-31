@@ -15,6 +15,29 @@ public class BuildingTransformer {
 
     public List<Building> buildings = new ArrayList<>();
 
+    public BuildingTransformer(List<Building> build) {
+
+        List<Building> buildings = build;
+
+        /*
+        //Przykładowy bydynek
+        Building B1 = new Building(1,"A");
+        Floor F11 = new Floor(1,"A");
+        Room R111 = new Room(1, "a",100,20,10,5);
+        Room R112 = new Room(2, "a",60,20,10,5);
+        F11.rooms.add(R111);
+        F11.rooms.add(R112);
+        B1.floors.add(F11);
+        Floor F12 = new Floor(2,"B");
+        Room R121 = new Room(1, "b",100,20,10,5);
+        Room R122 = new Room(2, "b",60,20,10,5);
+        F12.rooms.add(R121);
+        F12.rooms.add(R122);
+        B1.floors.add(F12);
+
+        buildings.add(B1);
+        */
+    }
 
     public BuildingTransformer() {
         /*
@@ -232,6 +255,32 @@ public class BuildingTransformer {
         if (s.length()==0)
             return "Wszystkie pomieszczenia spełniają normę";
         return "Pomieszczenia nie spełniające normy:\n" + s;
+    }
+
+    public String getAll() {
+        String s = "";
+        if (buildings.size()==0)
+            return "Brak informacji do wyświetlenia";
+        s += "Ilość budynków: " + buildings.size() + "\n";
+        for (int i = 0; i < buildings.size(); i++) {
+
+            int x = 0;
+
+            s += "\nBudynek nr." + (i +1) + ":\n";
+            s += "Id: " + buildings.get(i).getId() + "\n";
+            s += "Name: " + buildings.get(i).getName() + "\n";
+            s += "Ilość pięter: " + buildings.get(i).floors.size() + "\n";
+            for(int j = 0; j < buildings.get(i).floors.size(); j ++){
+                x += buildings.get(i).floors.get(j).rooms.size();
+            }
+            s += "Ilość pokoi: " + x + "\n";
+            s += "Powierzchnia budynku: " + buildings.get(i).getArea() + "\n";
+            s += "Kubatura budynku: " + buildings.get(i).getCube() + "\n";
+            s += "Zużycie energii na m^3 w budynku: " + buildings.get(i).getHeating() + "\n";
+            s += "Oświetlenie budynku na m^2: " + buildings.get(i).getLight() + "\n";
+
+        }
+        return s;
     }
 
 }

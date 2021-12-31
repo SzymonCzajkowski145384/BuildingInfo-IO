@@ -124,6 +124,12 @@ public class BuildingInfoController {
         return transformer.getWrongRooms(norm);
     }
 
+    @RequestMapping("/all")
+    public String getAll(){
+        logger.info("Executing function getAll");
+        return transformer.getAll();
+    }
+
 }
 
 
