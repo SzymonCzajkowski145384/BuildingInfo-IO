@@ -15,6 +15,10 @@ class FloorTest {
 
     private Floor floor;
     private Room room1,room2,room3;
+
+
+    private Floor floor2;
+    private Room room4,room5,room6;
     /**
      * This method is setUp method. It runs before each test.
      *
@@ -29,6 +33,15 @@ class FloorTest {
         floor.rooms.add(room1);
         floor.rooms.add(room2);
         floor.rooms.add(room3);
+
+        room4 = new Room(997,"room",10,10,1,99);
+        room5 = new Room(997,"room",20,20,2,99);
+        room6 = new Room(997,"room",30,30,3,99);
+
+        floor2 = new Floor(997,"floor2");
+        floor2.rooms.add(room4);
+        floor2.rooms.add(room5);
+        floor2.rooms.add(room6);
     }
 
     /**
@@ -40,6 +53,11 @@ class FloorTest {
         assertEquals(6,floor.getCube(),"testFloorGetCube");
 
     }
+    @Test
+    public void testFloorGetCube2(){
+        assertEquals(60,floor2.getCube(),"testFloorGetCube");
+
+    }
 
     /**
      * This method tests floor.getHeating.
@@ -48,7 +66,10 @@ class FloorTest {
     @Test
     public void testFloorGetHeating(){
         assertEquals(6,floor.getHeating(),"testFloorGetHeaing");
-
+    }
+    @Test
+    public void testFloorGetHeating2(){
+        assertEquals(6,floor2.getHeating(),"testFloorGetHeaing");
     }
 
     /**
@@ -58,9 +79,11 @@ class FloorTest {
     @Test
     public void testFloorGetArea(){
         assertEquals(6,floor.getArea(),"testFloorGetArea");
-
     }
-
+    @Test
+    public void testFloorGetArea2(){
+        assertEquals(60,floor2.getArea(),"testFloorGetArea");
+    }
     /**
      * This method tests floor.getLight.
      *
@@ -68,6 +91,11 @@ class FloorTest {
     @Test
     public void testFloorGetLight(){
         assertEquals(6,floor.getLight(),"testFloorGetLight");
+
+    }
+    @Test
+    public void testFloorGetLight2(){
+        assertEquals(297,floor2.getLight(),"testFloorGetLight");
 
     }
 

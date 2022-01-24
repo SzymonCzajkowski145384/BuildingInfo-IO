@@ -10,6 +10,7 @@ import static org.mockito.Mockito.*;
 class FloorTestObiektyZastepcze {
 
     Floor mock = mock(Floor.class);
+    Floor mock2 = mock(Floor.class);
 
     @BeforeEach
     void setUp(){
@@ -17,6 +18,7 @@ class FloorTestObiektyZastepcze {
         when(mock.getCube()).thenReturn(20F);
         when(mock.getHeating()).thenReturn(30F);
         when(mock.getLight()).thenReturn(40F);
+        when(mock2.getLight()).thenReturn(4F);
     }
 
     @Test
@@ -38,4 +40,9 @@ class FloorTestObiektyZastepcze {
     void getLight() {
         assertEquals(40F, mock.getLight());
     }
+    @Test
+    void getLight2() {
+        assertEquals(4F, mock2.getLight());
+    }
+
 }

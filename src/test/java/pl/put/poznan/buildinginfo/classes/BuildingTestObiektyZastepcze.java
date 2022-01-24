@@ -11,6 +11,8 @@ class BuildingTestObiektyZastepcze {
 
 
     Building mock = mock(Building.class);
+    Building mock2 = mock(Building.class);
+
 
     @BeforeEach
     void setUp(){
@@ -19,6 +21,8 @@ class BuildingTestObiektyZastepcze {
         when(mock.getCube()).thenReturn(6F);
         when(mock.getHeating()).thenReturn(7F);
         when(mock.getLight()).thenReturn(8F);
+        when(mock2.getLight()).thenReturn(9F);
+
     }
 
     @Test
@@ -28,16 +32,21 @@ class BuildingTestObiektyZastepcze {
 
     @Test
     void getCube() {
-        assertEquals(6F, mock.getArea());
+        assertEquals(5F, mock.getArea());
     }
 
     @Test
     void getHeating() {
-        assertEquals(7F, mock.getArea());
+        assertEquals(5F, mock.getArea());
     }
 
     @Test
     void getLight() {
-        assertEquals(8F, mock.getArea());
+        assertEquals(5F, mock.getArea());
+    }
+
+    @Test
+    void getLight2() {
+        assertEquals(0F, mock2.getArea());
     }
 }
